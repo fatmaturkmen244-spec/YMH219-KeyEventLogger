@@ -112,29 +112,29 @@ public sealed class MainForm : Form
         };
         Controls.Add(toolbarPanel);
 
-        _btnStart = CreateToolbarButton("▶ Kaydı Başlat", 12, 9, 138, Color.FromArgb(16, 185, 129), Color.FromArgb(6, 46, 34));
+        _btnStart = CreateToolbarButton("▶ Başlat", 12, 9, 130, Color.FromArgb(16, 185, 129), Color.FromArgb(6, 46, 34));
         _btnStart.Click += (_, _) => SetRecordingState(true);
         toolbarPanel.Controls.Add(_btnStart);
 
-        _btnStop = CreateToolbarButton("■ Kaydı Durdur", 158, 9, 138, Color.FromArgb(245, 158, 11), Color.FromArgb(30, 20, 5));
+        _btnStop = CreateToolbarButton("■ Durdur", 150, 9, 130, Color.FromArgb(245, 158, 11), Color.FromArgb(30, 20, 5));
         _btnStop.Click += (_, _) => SetRecordingState(false);
         toolbarPanel.Controls.Add(_btnStop);
 
-        _btnClear = CreateToolbarButton("🗑 Listeyi Temizle", 304, 9, 148, Color.FromArgb(239, 68, 68), Color.White);
+        _btnClear = CreateToolbarButton("🗑 Temizle", 288, 9, 135, Color.FromArgb(239, 68, 68), Color.White);
         _btnClear.Click += (_, _) => ClearAllLogs();
         toolbarPanel.Controls.Add(_btnClear);
 
-        _btnExport = CreateToolbarButton("💾 .TXT Olarak Kaydet", 460, 9, 172, Color.FromArgb(14, 165, 233), Color.FromArgb(8, 28, 48));
+        _btnExport = CreateToolbarButton("💾 .TXT Kaydet", 431, 9, 160, Color.FromArgb(14, 165, 233), Color.FromArgb(8, 28, 48));
         _btnExport.Click += (_, _) => ExportLogsWithDialog();
         toolbarPanel.Controls.Add(_btnExport);
 
         _chkKeyUp = new CheckBox
         {
-            Text = "KeyUp Kaydet",
+            Text = "KeyUp Olayları",
             Checked = true,
             Font = new Font("Segoe UI", 9f),
             ForeColor = Color.FromArgb(203, 213, 225),
-            Location = new Point(652, 16),
+            Location = new Point(615, 16),
             AutoSize = true
         };
         _chkKeyUp.CheckedChanged += (_, _) => _session.LogKeyUpEvents = _chkKeyUp.Checked;
@@ -142,11 +142,11 @@ public sealed class MainForm : Form
 
         _chkKeyPress = new CheckBox
         {
-            Text = "KeyPress (Karakter) Kaydet",
+            Text = "KeyPress Olayları",
             Checked = true,
             Font = new Font("Segoe UI", 9f),
             ForeColor = Color.FromArgb(203, 213, 225),
-            Location = new Point(768, 16),
+            Location = new Point(755, 16),
             AutoSize = true
         };
         _chkKeyPress.CheckedChanged += (_, _) => _session.LogKeyPressEvents = _chkKeyPress.Checked;
